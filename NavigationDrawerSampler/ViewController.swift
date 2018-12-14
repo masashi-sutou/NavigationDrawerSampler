@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import NavigationDrawerTransition
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    
+    private var navigationDrawerTransitionCoordinator: NavigationDrawerTransitionCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationItem.title = "NavigationDrawerSampler"
+        
+        navigationDrawerTransitionCoordinator = NavigationDrawerTransitionCoordinator(rootViewController: self)
+        navigationDrawerTransitionCoordinator?.setupDrawerNavigationItemLeftBarButton()
     }
-
-
 }
-
